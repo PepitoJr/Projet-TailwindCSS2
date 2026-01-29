@@ -1,28 +1,26 @@
 version: 0.2
-
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
       - echo "Installation des dependances"
       - npm install
-
+      - chmod -R +x node_modules/.bin
   pre_build:
     commands:
       - echo "start the prebuild and end it"
       - node --version
       - npm --version
       - which npx
-
   build:
     commands:
-      - echo "running the build "
-      - npm run build
-
+      - echo "running the build"
+      - npx tailwindcss -i ./style.css -o ./output.css --minify
   post_build:
     commands:
       - echo "build termine"
       - ls -la output.css
-
 artifacts:
   files:
     - "**/*"
