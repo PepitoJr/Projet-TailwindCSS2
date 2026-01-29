@@ -6,18 +6,18 @@ phases:
       - echo "Installation des dependances"
       - npm install
 
-  pre-build:
+  pre_build:
     commands:
       - echo "start the prebuild and end it"
       - node --version
-      -npm install
+      - npm install
 
   build:
     commands:
       - echo "running the build "
       - npx tailwindcss -i ./style.css -o ./output.css --minify
 
-  post-build:
+  post_build:
     commands:
       - echo "build termine"
       - ls -la
