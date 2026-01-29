@@ -10,17 +10,18 @@ phases:
     commands:
       - echo "start the prebuild and end it"
       - node --version
-      - npm install
+      - npm --version
+      - which npx
 
   build:
     commands:
       - echo "running the build "
-      - npx tailwindcss -i ./style.css -o ./output.css --minify
+      - npm run build
 
   post_build:
     commands:
       - echo "build termine"
-      - ls -la
+      - ls -la output.css
 
 artifacts:
   files:
