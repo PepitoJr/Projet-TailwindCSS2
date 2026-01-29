@@ -1,4 +1,10 @@
 {
+  "name": "projet-tailwindcss2",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tailwindcss -i ./style.css -o ./output.css --minify",
+    "dev": "tailwindcss -i ./style.css -o ./output.css --watch"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
   }
